@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block Content %}
+  <!-- Movies -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/service.css' %}" />
+
+<section id="movies" class="movies">
+    <div>
+      <h2 class="heading"><b>OUR SERVICES</b></h2>
+
+      <!-- Movies Container -->
+      <div class="movies-container">
+        <!-- Box-1 -->
+        <div class="box">
+          <div class="box-img">
+            <a href="booking/book.html">
+              <img src="{% static 'images/s1.png' %}" alt="">
+            </a>
+          </div>
+          <h6><a href="cleaning" class="btn">HOME CLEANING</a></h6>
+          <br>
+
+        </div>
+      <br>
+        <!-- Box-2 -->
+        <div class="box">
+          <div class="box-img">
+            <img src="{% static 'images/s2.jpg' %}" alt="">
+          </div>
+          <h6><a href="plumber" class="btn">PLUMBING</a></h6>
+          <br>
+         
+        </div>
+      <br>
+        <!-- Box-3 -->
+        <div class="box">
+          <div class="box-img">
+            <img src="{% static 'images/s3.jpg' %}" alt="">
+          </div>
+          <h6><a href="electrician" class="btn">ELECTRICIAN</a></h6>
+          <br>
+
+        </div>
+        <!-- Box-4 -->
+        <div class="box">
+          <div class="box-img">
+            <img src="{% static 'images/s4.jpg' %}"  alt="">
+          </div>
+          <h6><a href="carpenter" class="btn">CARPENTER</a></h6>
+          <br>
+         
+        </div>
+        <br>
+        <!-- Box-5 -->
+        <div class="box">
+          <div class="box-img">
+            <img src="{% static 'images/s5.jpg' %}" alt="">
+          </div>
+          <h6><a href="cctv" class="btn">CCTV SECURITY</a></h6>
+          <br>
+         <div>
+            
+          </div>
+        </div>
+    </section>
+       
+  {% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block Content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCTV Security Person Details</title>
+    <style>
+        /* Add your custom styles here */
+        .security-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd; /* Add borders or other styling as needed */
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .security-image {
+            max-width: 100px; /* Set the maximum width for the image */
+            height: auto; /* Maintain the aspect ratio of the image */
+            border-radius: 50%; /* Optional: Rounded corners for the image */
+            margin-right: 20px; /* Add some margin to separate the image from text */
+        }
+
+        .security-details {
+            flex-grow: 1; /* Allow the text to take up remaining space in the flex container */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- CCTV Security Person Details -->
+    <div class="security-box">
+        <img src="{% static 'images/security_person.jpg' %}" alt="Security Person Image" class="security-image">
+        <div class="security-details">
+            <h2>Emma Surveillance</h2>
+            <p><strong>Phone:</strong> 555-5678</p>
+            <p><strong>Email:</strong> emma@example.com</p>
+            <p><strong>Security License:</strong> SEC456</p>
+            <p><strong>Workplace:</strong> ABC Security Solutions</p>
+            <p><strong>Years of Experience:</strong> 8</p>
+            <p><strong>Certifications:</strong> CCTV Monitoring, Security Operations</p>
+            <h6><a href="book" class="btn">Book Now</a></h6>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

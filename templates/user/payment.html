@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ecf0f1;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #paymentContainer {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 400px;
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+        }
+
+        #paymentOptions {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        #paymentOptions label {
+            margin-right: 20px;
+        }
+
+        #paymentForm {
+            padding: 20px;
+            display: grid;
+            gap: 15px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        label {
+            color: #555;
+        }
+
+        input {
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div id="paymentContainer">
+    <div id="paymentOptions">
+        <label>
+            <input type="radio" name="paymentMethod" value="online" checked> Online Payment
+        </label>
+        <label>
+            <input type="radio" name="paymentMethod" value="cod"> Cash on Delivery
+        </label>
+    </div>
+
+    <div id="paymentForm">
+        <h2>Payment Details</h2>
+        <form method="post" id="onlinePaymentForm" style="display: grid;">
+            {% csrf_token %}
+            <!-- Include online payment fields here -->
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+            <label for="expiryDate">Expiry Date:</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            <button type="submit" onclick="processPayment()">Submit Payment</button>
+
+        </form>
+
+        <form id="codForm" style="display: none;" method="post">
+            {% csrf_token %}
+            <!-- Include cash on delivery fields here -->
+            <p>No additional details required for Cash on Delivery.</p>
+            <button type="submit" onclick="processPayment()">Submit Payment</button>
+        </form>
+
+        
+    </div>
+</div>
+
+<script>
+    function processPayment() {
+        var selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+        if (selectedPaymentMethod === 'online') {
+            // Process online payment
+            var cardNumber = document.getElementById('cardNumber').value;
+            var expiryDate = document.getElementById('expiryDate').value;
+            var cvv = document.getElementById('cvv').value;
+
+            // Perform validation and processing logic for online payment
+            console.log('Processing online payment...');
+        } else if (selectedPaymentMethod === 'cod') {
+            // Process cash on delivery
+            // Perform logic for cash on delivery
+            console.log('Processing Cash on Delivery...');
+        }
+    }
+
+    // Toggle visibility of payment forms based on the selected payment method
+    document.querySelectorAll('input[name="paymentMethod"]').forEach(function (element) {
+        element.addEventListener('change', function () {
+            if (this.value === 'online') {
+                document.getElementById('onlinePaymentForm').style.display = 'grid';
+                document.getElementById('codForm').style.display = 'none';
+            } else if (this.value === 'cod') {
+                document.getElementById('onlinePaymentForm').style.display = 'none';
+                document.getElementById('codForm').style.display = 'grid';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

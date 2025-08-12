@@ -1,0 +1,57 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url({% static 'images/bg-01.jpg' %});">
+		<h2 class="ltext-105 cl0 txt-center">
+			view Booking
+		</h2>
+	</section>
+ <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+
+
+                                 <th class="success" style="color: white;">Requester Name</th>
+                                 <th class="success" style="color: white;">Service Provider Name</th>
+
+                                       <th class="success" style="color: white;">Request</th>
+                                       <th class="success" style="color: white;">Payment Status</th>
+
+     {% for i in ch  %}
+                                <tr style="background-color:white;width: 700px;">
+
+                                    <td>{{ i.user.user.first_name }}</td>
+                                    <td>{{ i.service.user.first_name }}</td>
+
+
+
+                                    <td>{{ i.request }}</td>
+
+                                      <td>{{ i.payment }}</td>
+
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+      <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+  {% endblock %}

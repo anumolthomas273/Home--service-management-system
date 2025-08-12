@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block Content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrician Details</title>
+    <style>
+        /* Add your custom styles here */
+        .electrician-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd; /* Add borders or other styling as needed */
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .electrician-image {
+            max-width: 100px; /* Set the maximum width for the image */
+            height: auto; /* Maintain the aspect ratio of the image */
+            border-radius: 50%; /* Optional: Rounded corners for the image */
+            margin-right: 20px; /* Add some margin to separate the image from text */
+        }
+
+        .electrician-details {
+            flex-grow: 1; /* Allow the text to take up remaining space in the flex container */
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #e74c3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Electrician Details -->
+    <div class="electrician-box">
+        <img src="{% static 'images/p1.jpg' %}" alt="Electrician Image" class="electrician-image">
+        <div class="electrician-details">
+            <h2>Michael Johnson</h2>
+            <p><strong>Phone:</strong> 555-5678</p>
+            <p><strong>Email:</strong> michael@example.com</p>
+            <p><strong>License Number:</strong> ELC456</p>
+            <p><strong>Business Address:</strong> 456 Power Lane, Electropolis</p>
+            <p><strong>Years of Experience:</strong> 15</p>
+            <p><strong>Certifications:</strong> Electrical License, Wiring Expert</p>
+            <h6><a href="book" class="btn">Book Now</a></h6>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

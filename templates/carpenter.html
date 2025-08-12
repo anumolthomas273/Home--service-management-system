@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% block Content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpenter Details</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .carpenter-box {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .carpenter-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .carpenter-details {
+            padding: 20px;
+        }
+
+        .carpenter-details h2 {
+            margin-top: 0;
+        }
+
+        .carpenter-details p {
+            margin: 5px 0;
+        }
+
+        .carpenter-details h6 {
+            margin: 10px 0 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #e74c3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Carpenter Details -->
+    <div class="carpenter-box">
+        <img src="{% static 'images/carpenter.jpg' %}" alt="Carpenter Image" class="carpenter-image">
+        <div class="carpenter-details">
+            <h2>David Carpenter</h2>
+            <p><strong>Phone:</strong> 555-9876</p>
+            <p><strong>Email:</strong> david@example.com</p>
+            <p><strong>License Number:</strong> CARP789</p>
+            <p><strong>Business Address:</strong> 789 Woodwork Street, Timber City</p>
+            <p><strong>Years of Experience:</strong> 12</p>
+            <p><strong>Certifications:</strong> Carpentry License, Woodcraft Expert</p>
+            <h6><a href="book" class="btn">Book Now</a></h6>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

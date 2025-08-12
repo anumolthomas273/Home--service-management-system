@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+{% block Content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add your custom styles here */
+        .plumber-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd; /* Add borders or other styling as needed */
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .plumber-image {
+            max-width: 100px; /* Set the maximum width for the image */
+            height: auto; /* Maintain the aspect ratio of the image */
+            border-radius: 50%; /* Optional: Rounded corners for the image */
+            margin-right: 20px; /* Add some margin to separate the image from text */
+        }
+
+        .plumber-details {
+            flex-grow: 1; /* Allow the text to take up remaining space in the flex container */
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #e74c3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+    <title>Plumber Details</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Plumber 1 Details -->
+        <div class="plumber-box">
+            <img src="{% static 'images/p1.png' %}" alt="Plumber 1 Image" class="plumber-image">
+            <div class="plumber-details">
+                <h2>John Thomas</h2>
+                <p><strong>Phone:</strong> 555-1234</p>
+                <p><strong>Email:</strong> john@example.com</p>
+                <p><strong>License Number:</strong> PLM123</p>
+                <p><strong>Business Address:</strong> 123 Main St, Cityville</p>
+                <p><strong>Years of Experience:</strong> 10</p>
+                <p><strong>Certifications:</strong> Plumbing License, Pipe Installation</p>
+                <h6><a href="book" class="btn">book now</a></h6>
+            </div>
+        </div>
+
+        <!-- Plumber 2 Details -->
+        <div class="plumber-box">
+            <img src="{% static 'images/p2.png' %}" alt="Plumber 2 Image" class="plumber-image">
+            <div class="plumber-details">
+                <h2>Jane Smith</h2>
+                <p><strong>Phone:</strong> 555-5678</p>
+                <p><strong>Email:</strong> jane@example.com</p>
+                <p><strong>License Number:</strong> PLM456</p>
+                <p><strong>Business Address:</strong> 456 Oak St, Townsville</p>
+                <p><strong>Years of Experience:</strong> 8</p>
+                <p><strong>Certifications:</strong> Plumbing License, Drain Cleaning</p>
+                <h6><a href="book" class="btn">book now</a></h6>
+            </div>
+        </div>
+
+        <!-- Plumber 3 Details -->
+        <div class="plumber-box">
+            <img src="{% static 'images/p3.png' %}" alt="Plumber 3 Image" class="plumber-image">
+            <div class="plumber-details">
+                <h2>Alex Johnson</h2>
+                <p><strong>Phone:</strong> 555-9876</p>
+                <p><strong>Email:</strong> alex@example.com</p>
+                <p><strong>License Number:</strong> PLM789</p>
+                <p><strong>Business Address:</strong> 789 Pine St, Villagetown</p>
+                <p><strong>Years of Experience:</strong> 15</p>
+                <p><strong>Certifications:</strong> Master Plumber, Leak Detection</p>
+                <h6><a href="book" class="btn">book now</a></h6>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+{% endblock %}
